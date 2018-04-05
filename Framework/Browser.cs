@@ -66,7 +66,7 @@ namespace Framework
         public static bool ElementIsDisplayed(By element)
         {
             var present = false;
-            _webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(0));
+            _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
             try
             {
                 present = _webDriver.FindElement(element).Displayed;
@@ -74,7 +74,7 @@ namespace Framework
             catch (NoSuchElementException)
             {
             }
-            _webDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            _webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             return present;
         }
 

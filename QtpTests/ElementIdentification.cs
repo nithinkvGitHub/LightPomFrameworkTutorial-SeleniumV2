@@ -18,10 +18,10 @@ namespace QtpTests
             driver.Navigate().GoToUrl("http://www.qtptutorial.net/automation-practice");
 
             ////Find an element using an id
-            //driver.FindElement(By.Id("idExample"));
-            //var idElement = driver.FindElement(By.Id("idExample"));
-            //idElement.Click();
-            //driver.Navigate().Back();
+            driver.FindElement(By.Id("idExample"));
+            var idElement = driver.FindElement(By.Id("idExample"));
+            idElement.Click();
+            driver.Navigate().Back();
 
             ////Find an element using a ClassName
             //element = driver.FindElement(By.ClassName("buttonClassExample"));
