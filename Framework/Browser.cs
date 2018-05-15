@@ -19,7 +19,7 @@ namespace Framework
 
         private static IWebDriver _webDriver;
 
-        private static string _baseUrl = "http://www.qtptutorial.net";
+        private static string _baseUrl = "https://www.ultimateqa.com/simple-html-elements-for-automation";
 
         internal static void SwitchTabs(int tabIndex)
         {

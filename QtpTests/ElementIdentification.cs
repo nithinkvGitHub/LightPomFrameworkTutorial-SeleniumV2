@@ -1,27 +1,39 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 
 namespace QtpTests
 {
     [TestClass]
     public class ElementIdentification : TestBase
     {
-        static IWebDriver driver = new FirefoxDriver();
+        static IWebDriver driver = new ChromeDriver();
         private IWebElement element;
         private By locator;
 
         [TestMethod]
         public void RunTest()
         {
-            driver.Navigate().GoToUrl("http://www.qtptutorial.net/automation-practice");
+            // driver.Navigate().GoToUrl("https://web.archive.org/web/20170808214449/http://www.qtptutorial.net:80/automation-practice/");
+
+            //driver.Navigate().GoToUrl("https://www.ultimateqa.com/simple-html-elements-for-automation/");
+
+            //Stopwatch s = Stopwatch.StartNew();
+
+            //driver.Navigate().GoToUrl("https://www.google.com");
+
+            //s.Stop();
+            //Console.WriteLine("Elapsed Time: {0} ms", s.ElapsedMilliseconds);
+            //Console.ReadKey();
 
             ////Find an element using an id
-            driver.FindElement(By.Id("idExample"));
-            var idElement = driver.FindElement(By.Id("idExample"));
-            idElement.Click();
-            driver.Navigate().Back();
+            //driver.FindElement(By.Id("idExample"));
+            //var idElement = driver.FindElement(By.Id("idExample"));
+            //idElement.Click();
+            //driver.Navigate().Back();
 
             ////Find an element using a ClassName
             //element = driver.FindElement(By.ClassName("buttonClassExample"));
@@ -67,47 +79,51 @@ namespace QtpTests
             //By byXpath = By.XPath("//input[@type='radio']");
             //IList<IWebElement> elements = driver.FindElements(byXpath);
 
+
+
             ////////Working with HTML tables
             ////////How can you get the whole html table into an object?
             //locator = By.Id("htmlTableId");
             //var table = driver.FindElement(locator);
 
-            //////how can you get a collection of all the rows in the table?
+            ////////how can you get a collection of all the rows in the table?
             //IList<IWebElement> collectionOfRows = table.FindElements(By.XPath("//*[@id='htmlTableId']/tbody/tr"));
 
 
             //////Using Selenium: What is the Salary of an SDET?
-            //var columnIndex = -1;
+            //var columnIndex = 0;
             //var columnCounter = 1;
-            //const string DESIRED_COLUMN_HEADER = "Salary";
-            //const string DESIRED_VALUE = "Software Development Engineer in Test";
+            //const string columnHeader = "Salary";
+            //const string rowValue = "Software Development Engineer in Test";
 
             //for (int tr = 0; tr <= collectionOfRows.Count; tr++)    //for every single row in the table
             //{
             //    var row = collectionOfRows[tr];
 
             //    IList<IWebElement> allCellsInRow = row.FindElements(By.XPath("./*"));
-            //    foreach (var cell in allCellsInRow)
+            //    foreach (var cell in allCellsInRow)      //for evry single cell in the table rows
             //    {
-            //        if (cell.Text == DESIRED_COLUMN_HEADER)
+            //        if (cell.Text == columnHeader)
             //        {
             //            columnIndex = columnCounter;
             //        }
 
-            //        if (cell.Text == DESIRED_VALUE)
+            //        if (cell.Text == rowValue)
             //        {
             //            //.//*[@id='htmlTableId']/tbody/tr[2]/td[3]
-            //            string salaryLocator = string.Format(".//*[@id='htmlTableId']/tbody/tr[{0}]/td[{1}]", tr + 1, columnIndex);
+            //            int rowIndex = tr + 1;
+            //            string salaryLocator = string.Format(".//*[@id='htmlTableId']/tbody/tr[{0}]/td[{1}]", rowIndex, columnIndex);
             //            var salary = driver.FindElement(By.XPath(salaryLocator));
-            //            Console.WriteLine("The {0} of {1} is {2}", DESIRED_COLUMN_HEADER, DESIRED_VALUE, salary.Text);
+            //            Console.WriteLine("The {0} of {1} is {2}", columnHeader, rowValue, salary.Text);
+
             //        }
             //        columnCounter++;
             //    }
             //}
 
             ////How do you get an html table that has no id?
-            locator = By.TagName("table");
-            IList<IWebElement> tables = driver.FindElements(locator);
+            //locator = By.TagName("table");
+            //IList<IWebElement> tables = driver.FindElements(locator);
         }
 
         [TestCleanup]
